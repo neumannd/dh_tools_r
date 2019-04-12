@@ -7,7 +7,6 @@
 #'
 #' @return numeric or array of numerics giving the number of days per month
 #' @export TRUE
-#' @import is.leapyear
 #'
 #' @examples
 #' 
