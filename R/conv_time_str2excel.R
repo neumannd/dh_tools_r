@@ -1,3 +1,19 @@
+#' Convert string/character time stamp to MS Excel time stamp
+#'
+#' Convert string/character time stamp to MS Excel time stamp
+#'
+#' @param time character; time stamp as character
+#' @param reftime POSIXct, optional; provide another reference time
+#'
+#' @return time numeric; time as MS Excel time stamp in hours since 01/01/1900
+#' @export
+#'
+#' @examples
+#' 
+#'   # 2001-03-30 01:00:00 UTC => 36980 hours since 1900-01-01 00:00 UTC
+#'   time_char <- '2001-03-30 01:00:00 UTC'
+#'   time_excel <- conv_time_POSIXct2excel(time_char)
+#'   print(time_excel)
 conv_time_str2excel = function(time, format = '%Y-%m-%d %H:%M', reftime = '1900-01-01 00:00 UTC', refformat = '%Y-%m-%d %H:%M') {
   
   ## Excel saves the time in days since 01-01-1900
