@@ -16,13 +16,11 @@
 #' @param x.max.default numeric: user provided alternative max value [dafault: 1]
 #' @return numeric: max value for the plot axis
 #' 
-#' @date 2015-11-16
-#' @version 1.0
 #' @export
 get.max4plot <- function(x, type, x.max.default = 1) {
   
   x.max.sharp = max(x, na.rm = TRUE)
-  # abc
+  
   if ( x.max.sharp == 0 ) {
     x.max.plot = x.max.default
   } else {
@@ -41,6 +39,6 @@ get.max4plot <- function(x, type, x.max.default = 1) {
       x.max.plot = x.max.default
     }
   }
-  #' abc
+  
   return(x.max.plot)
 }

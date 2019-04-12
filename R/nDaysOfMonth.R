@@ -6,7 +6,7 @@
 #' @param year numeric, optional [default: 2001; no leap year]
 #'
 #' @return numeric or array of numerics giving the number of days per month
-#' @export TRUE
+#' @export
 #'
 #' @examples
 #' 
