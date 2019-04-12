@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Convert string/character time stamp to MS Excel time stamp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for conv_time_str2excel"><tr><td>conv_time_str2excel</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Convert string/character time stamp to MS Excel time stamp</h2>
+
+<h3>Description</h3>
+
+<p>Convert string/character time stamp to MS Excel time stamp
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+conv_time_str2excel(time, format = "%Y-%m-%d %H:%M",
+  reftime = "1900-01-01 00:00 UTC", refformat = "%Y-%m-%d %H:%M")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>time</code></td>
+<td>
+<p>character; time stamp as character</p>
+</td></tr>
+<tr valign="top"><td><code>reftime</code></td>
+<td>
+<p>POSIXct, optional; provide another reference time</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>time numeric; time as MS Excel time stamp in hours since 01/01/1900
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+  # 2001-03-30 01:00:00 UTC =&gt; 36980 hours since 1900-01-01 00:00 UTC
+  time_char &lt;- '2001-03-30 01:00:00 UTC'
+  time_excel &lt;- conv_time_POSIXct2excel(time_char)
+  print(time_excel)
+</pre>
+
+
+</body></html>

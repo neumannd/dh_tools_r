@@ -2,20 +2,30 @@
 % Please edit documentation in R/get.max4plot.R
 \name{get.max4plot}
 \alias{get.max4plot}
-\title{TODO}
+\title{Calculate max value for plot axes}
 \usage{
 get.max4plot(x, type, x.max.default = 1)
 }
 \arguments{
 \item{x}{numeric: one or more values for}
 
-\item{type}{integer: type of}
+\item{type}{integer: type of choosing the max value (0, 1, 2 or 3)}
+
+\item{x.max.default}{numeric: user provided alternative max value [dafault: 1]}
+}
+\value{
+numeric: max value for the plot axis
 }
 \description{
 Calculates the axis limits (min,max) for plotting a data series. Different 
 types of methods can be choosen, such no rounding of min and max values and
 rounding to the n_th digit.
 }
-\author{
-Daniel Neumann, daniel.neumann@posteo.de
+\details{
+Values for type (we define x.max.sharp <- max(x, na.rm = TRUE)):
+
+0: use x.max.sharp; except if it is 0; then use x.max.default
+ 1: some complicated estimation: ceiling(x.max.sharp/10^(floor(log10(x.max.sharp))-1))*10^(floor(log10(x.max.sharp))-1)
+ 2: round up to two significant digits: signif(x.max.sharp, digits = 1) * 2
+ 3: round up to one significant digit: signif(x.max.sharp, digits = 1) * 1
 }

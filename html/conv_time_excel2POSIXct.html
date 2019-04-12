@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Convert MS Excel time stamp to POSIXct Format</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for conv_time_excel2POSIXct"><tr><td>conv_time_excel2POSIXct</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Convert MS Excel time stamp to POSIXct Format</h2>
+
+<h3>Description</h3>
+
+<p>Convert MS Excel time stamp to POSIXct Format.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+conv_time_excel2POSIXct(time,
+  reftime = as.POSIXct("1900-01-01 00:00 UTC"))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>time</code></td>
+<td>
+<p>numeric; a time stamp in hours since 01/01/1900</p>
+</td></tr>
+<tr valign="top"><td><code>reftime</code></td>
+<td>
+<p>POSIXct, optional; provide another reference time</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>time_POSIXct POSIXct: time in format POSIXct
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+  # 31069 hours since 01/01/1900 00:00:00 =&gt; 22/01/1985 
+  time_excel &lt;- 31069 
+  time_posixct &lt;- conv_time_excel2POSIXct(time_excel)
+  print(time_posixct)
+</pre>
+
+
+</body></html>

@@ -1,11 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: TODO</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calculate max value for plot axes</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for get.max4plot"><tr><td>get.max4plot</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>TODO</h2>
+<h2>Calculate max value for plot axes</h2>
 
 <h3>Description</h3>
 
@@ -31,14 +31,29 @@ get.max4plot(x, type, x.max.default = 1)
 </td></tr>
 <tr valign="top"><td><code>type</code></td>
 <td>
-<p>integer: type of</p>
+<p>integer: type of choosing the max value (0, 1, 2 or 3)</p>
+</td></tr>
+<tr valign="top"><td><code>x.max.default</code></td>
+<td>
+<p>numeric: user provided alternative max value [dafault: 1]</p>
 </td></tr>
 </table>
 
 
-<h3>Author(s)</h3>
+<h3>Details</h3>
 
-<p>Daniel Neumann, daniel.neumann@posteo.de
+<p>Values for type (we define x.max.sharp &lt;- max(x, na.rm = TRUE)):
+</p>
+<p>0: use x.max.sharp; except if it is 0; then use x.max.default
+1: some complicated estimation: ceiling(x.max.sharp/10^(floor(log10(x.max.sharp))-1))*10^(floor(log10(x.max.sharp))-1)
+2: round up to two significant digits: signif(x.max.sharp, digits = 1) * 2
+3: round up to one significant digit: signif(x.max.sharp, digits = 1) * 1
+</p>
+
+
+<h3>Value</h3>
+
+<p>numeric: max value for the plot axis
 </p>
 
 

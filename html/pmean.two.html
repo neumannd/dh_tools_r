@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Parallel mean for two 1D or 2D numeric arrays</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for pmean.two"><tr><td>pmean.two</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Parallel mean for two 1D or 2D numeric arrays</h2>
+
+<h3>Description</h3>
+
+<p>Calculates parallel mean of two 1D or 2D numeric arrays. Other classes or sizes are probably not possible. Wrong inputs are not caught due to reasons of performance.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+pmean.two(a1, a2, na.rm = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>a1</code></td>
+<td>
+<p>numeric array; 1D or 2D array with same number of rows as a2; if 1D, the length is considered as number of rows</p>
+</td></tr>
+<tr valign="top"><td><code>a2</code></td>
+<td>
+<p>numeric array; 1D or 2D array with same number of rows as a1; if 1D, the length is considered as number of rows</p>
+</td></tr>
+<tr valign="top"><td><code>na.rm</code></td>
+<td>
+<p>a logical indicating whether missing values should be removed.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>numeric array; length==nrow of a1 and a2 if one of them was 2D array; length=length of a1 and a2 if both were 1D arrays
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+# ex 1
+b1 &lt;- array(1:12, dim = c(4,3))
+b2 &lt;- 1:4
+pmean.two(b1, b2)
+&gt; 4 5 6 7
+
+# ex 2
+b1 &lt;- array(1:12, dim = c(4,3))
+b2 &lt;- array(1:12, dim = c(4,3))
+pmean.two(b1, b2)
+&gt; 5 6 7 8
+
+</pre>
+
+
+</body></html>

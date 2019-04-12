@@ -9,7 +9,7 @@
 
 <h3>Description</h3>
 
-<p>Returns the number of days per month
+<p>Returns the number of days per month.
 </p>
 
 
@@ -29,7 +29,7 @@ nDaysOfMonth(month, year = 2001)
 </td></tr>
 <tr valign="top"><td><code>year</code></td>
 <td>
-<p>numeric, optional</p>
+<p>numeric, optional [default: 2001; no leap year]</p>
 </td></tr>
 </table>
 
@@ -38,6 +38,28 @@ nDaysOfMonth(month, year = 2001)
 
 <p>numeric or array of numerics giving the number of days per month
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+# #days in may 2001:
+nDaysOfMonth(5)
+&gt; 31
+
+# #days in February 2001:
+nDaysOfMonth(2)
+&gt; 28
+
+# #days in February 2004:
+nDaysOfMonth(2, 2004)
+&gt; 29
+
+# #days in a set of months in 2007
+nDaysOfMonth(c(1,2,6,12), 2007)
+&gt; 31 28 30 31
+</pre>
 
 
 </body></html>
