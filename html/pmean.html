@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Parallel mean</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for pmean"><tr><td>pmean</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Parallel mean</h2>
+
+<h3>Description</h3>
+
+<p>Returns the parallel mean of the input values.
+</p>
+<p>pmean takes one or more vectors as arguments, recycles them to common length and returns a single vector giving the ‘parallel’ mean of the argument vectors.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+pmean(..., na.rm = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>numeric arguments (see Note).</p>
+</td></tr>
+<tr valign="top"><td><code>na.rm</code></td>
+<td>
+<p>a logical indicating whether missing values should be removed.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A vector of length the longest of the input vectors, or length zero if one of the inputs had zero length. The arithmetic mean of the values in '...' is computed, as a numeric vector. If '...' are not logical (coerced to numeric) or numeric (including integer), NA_real_ is returned, with a warning.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Daniel Neumann, daniel.neumann@io-warnemuende.de
+</p>
+
+
+<h3>See Also</h3>
+
+<p>pmax, pmin
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  abc = 1:5
+  def = 5:1
+  pmean(abc, def)
+  # returns: 3 3 3 3 3
+  
+  ghi = c(6, 6, 6, NA, 6)
+  pmean(abc, def, ghi)
+  # returns: 4 4 4 NA 4
+  
+  pmean(abc, def, ghi, na.rm = TRUE)
+  # returns: 4 4 4 3 4
+  
+</pre>
+
+
+</body></html>
