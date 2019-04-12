@@ -1,6 +1,6 @@
 Package: dhtools
 Title: DH Tools
-Version: 1.0.0.0
+Version: 1.1.0.0
 Authors@R: person("Daniel", "Neumann", email = "daniel.neumann@posteo.de", role = c("aut", "cre"))
 Description: Some simple R functions to simplify our life
 Depends:

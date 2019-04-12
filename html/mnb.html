@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Mean Normalized Bias</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for mnb"><tr><td>mnb</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Mean Normalized Bias</h2>
+
+<h3>Description</h3>
+
+<p>Calculate a mean normalized bias.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+mnb(p, o, na.rm = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>numeric array; predicted values (model)</p>
+</td></tr>
+<tr valign="top"><td><code>o</code></td>
+<td>
+<p>numeric array; measured/observed values</p>
+</td></tr>
+<tr valign="top"><td><code>na.rm</code></td>
+<td>
+<p>a logical indicating whether missing values should be removed.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>MNB = 1/n * sum((p-o)/o)
+</p>
+
+
+<h3>Value</h3>
+
+<p>numeric; mean normalized bias
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+  # ex 1
+  p &lt;- 1:5
+  o &lt;- 2:6
+  mnb(p,o)
+  &gt; -0.29
+  
+  # ex 2
+  p &lt;- c(1:4, NA)
+  o &lt;- 2:6
+  mnb(p,o)
+  &gt; -0.3208333
+  
+  # ex 3
+  p &lt;- c(1:4,NA)
+  o &lt;- 2:6
+  mnb(p,o,na.rm=FALSE)
+  &gt; NA
+  
+  # ex 4
+  p &lt;- 1:5
+  o &lt;- c(2:5, 0)
+  mnb(p,o)
+  &gt; -0.3208333
+  
+  # ex 5
+  p &lt;- 1:5
+  o &lt;- c(2:5, 0)
+  mnb(p,o, na.rm=FALSE)
+  &gt; Inf
+
+</pre>
+
+
+</body></html>
